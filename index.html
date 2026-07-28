@@ -525,6 +525,11 @@
     .footer-legal a { font-size: 12px; color: var(--gray); transition: color .2s; }
     .footer-legal a:hover { color: var(--white); }
 
+    @keyframes logoPulse {
+      0%   { filter: drop-shadow(0 0 30px rgba(212,160,23,0.25)); transform: scale(1); }
+      100% { filter: drop-shadow(0 0 60px rgba(212,160,23,0.55)); transform: scale(1.03); }
+    }
+
     /* Scroll reveal */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .revealed { opacity: 1; transform: none; }
@@ -577,11 +582,7 @@
   </div>
   <div class="hero-image">
     <div style="width:100%;height:100%;background:linear-gradient(160deg,#1a0d00 0%,#0d0d0d 60%,#000 100%);display:flex;align-items:center;justify-content:center;">
-      <svg viewBox="0 0 400 600" width="400" height="600" xmlns="http://www.w3.org/2000/svg" style="opacity:0.2">
-        <circle cx="200" cy="200" r="160" fill="none" stroke="#D4A017" stroke-width="1" opacity="0.4"/>
-        <circle cx="200" cy="200" r="220" fill="none" stroke="#D4A017" stroke-width="0.5" opacity="0.2"/>
-        <text x="200" y="320" text-anchor="middle" font-size="120" fill="#D4A017" opacity="0.15" font-family="sans-serif" font-weight="900">PW</text>
-      </svg>
+      <img src="logo.png" alt="Purpose Wave Entertainment" style="width:75%;max-width:480px;height:auto;filter:drop-shadow(0 0 40px rgba(212,160,23,0.35));animation:logoPulse 4s ease-in-out infinite alternate;" />
     </div>
     <div class="hero-image-overlay"></div>
     <div class="soundwave">
