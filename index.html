@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Purpose Wave Entertainment</title>
+  <title>Purpose Wave Entertainment | Positive Sound. Purpose Driven.</title>
+  <meta name="description" content="Purpose Wave Entertainment creates AI-assisted, human-inspired music promoting positivity, growth and leadership for youth and emerging leaders." />
+  <meta property="og:title" content="Purpose Wave Entertainment" />
+  <meta property="og:description" content="Positive Sound. Purpose Driven. AI-assisted music for youth and emerging leaders." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script>document.documentElement.classList.add('js');</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,6 +103,7 @@
       border-bottom: none;
       white-space: nowrap;
     }
+    .dropdown-menu .dropdown-all { color: var(--gold); font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .dropdown-menu a:hover {
       color: var(--gold);
       background: rgba(212,160,23,0.06);
@@ -437,7 +448,7 @@
     .newsletter-text h3 { font-size: 20px; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; }
     .newsletter-text p { font-size: 13px; color: var(--gray); }
     .newsletter-form {
-      display: flex; gap: 0; min-width: 400px;
+      display: flex; gap: 0; min-width: 400px; margin: 0;
     }
     .newsletter-form input {
       flex: 1; padding: 14px 20px;
@@ -531,8 +542,88 @@
     }
 
     /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-    .revealed { opacity: 1; transform: none; }
+    /* Only hide content for the reveal effect when JS is running */
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.revealed { opacity: 1; transform: none; }
+
+    /* ─── IN-PAGE NAVIGATION ─── */
+    html { scroll-behavior: smooth; }
+    section[id], [id="listen"], [id="newsletter"] { scroll-margin-top: 70px; }
+    #ai-lab { scroll-margin-top: 100px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    a.btn-primary, a.btn-outline, a.btn-playlist, a.btn-listen-live { display: inline-block; text-align: center; }
+    a.btn-listen-live { display: block; }
+    .btn-sm { padding: 10px 20px; font-size: 12px; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .is-placeholder { opacity: .55; cursor: default; }
+    .waveform.paused span { animation-play-state: paused; }
+    .service-lab.flash { animation: flash 1.6s ease; border-radius: 8px; }
+    @keyframes flash { 0%,100% { box-shadow: 0 0 0 0 rgba(212,160,23,0); } 30% { box-shadow: 0 0 0 12px rgba(212,160,23,0.18); background: rgba(212,160,23,0.06); } }
+
+    /* ─── VIDEO ─── */
+    .video-section { background: var(--black); }
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .video-card { background: var(--dark2); border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .video-thumb { aspect-ratio: 16/9; position: relative; display: flex; align-items: center; justify-content: center; }
+    .video-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .vid-bg-1 { background: linear-gradient(135deg, #2a1500, #0d0d0d); }
+    .vid-bg-2 { background: linear-gradient(135deg, #0a1530, #0d0d0d); }
+    .vid-bg-3 { background: linear-gradient(135deg, #150a25, #0d0d0d); }
+    .video-play {
+      width: 58px; height: 58px; border-radius: 50%; cursor: pointer;
+      background: rgba(0,0,0,0.55); border: 2px solid rgba(255,255,255,0.5);
+      color: var(--white); font-size: 18px; transition: background .2s, border-color .2s, color .2s;
+    }
+    .video-card:hover .video-play { background: var(--gold); border-color: var(--gold); color: var(--black); }
+    .video-info { padding: 16px 18px 20px; }
+    .video-info h5 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .video-info p { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+    /* ─── PODCASTS ─── */
+    .podcasts { background: var(--dark2); }
+    .podcast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .podcast-card {
+      display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: center;
+      background: var(--dark3); border-radius: 8px; padding: 20px;
+      border: 1px solid rgba(212,160,23,0.15);
+    }
+    .podcast-art {
+      aspect-ratio: 1; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; font-weight: 900; color: var(--gold); letter-spacing: 1px;
+      border: 1px solid rgba(212,160,23,0.3);
+    }
+    .pod-bg-1 { background: linear-gradient(135deg, #2a1500, #0a0a0a); }
+    .pod-bg-2 { background: linear-gradient(135deg, #051a10, #0a0a0a); }
+    .podcast-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .podcast-body h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .podcast-body p { font-size: 13px; color: var(--gray-light); line-height: 1.6; margin-bottom: 16px; }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--black); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+    .contact h2 { font-size: clamp(30px, 3.2vw, 46px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .contact h2 .gold { color: var(--gold); }
+    .contact-text p { font-size: 15px; line-height: 1.7; color: var(--gray-light); margin-bottom: 28px; max-width: 440px; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 14px; color: var(--gray-light); }
+    .contact-list span { display: block; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+    .contact-list a:hover { color: var(--gold); }
+    .contact-form { background: var(--dark2); border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 18px; border: 1px solid rgba(255,255,255,0.06); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact-form label { display: flex; flex-direction: column; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-light); }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      background: var(--dark3); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 4px;
+      color: var(--white); font: inherit; font-size: 14px; letter-spacing: 0; text-transform: none;
+      padding: 12px 14px; outline: none; transition: border-color .2s;
+    }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form [aria-invalid="true"] { border-color: #e55; }
+    .contact-form button { align-self: flex-start; }
+    .form-status { font-size: 13px; min-height: 1em; }
+    .form-status.ok { color: var(--gold); }
+    .form-status.err { color: #f77; }
+    .newsletter { position: relative; }
+    .newsletter-status { grid-column: 1 / -1; margin-top: -40px; text-align: right; }
 
     /* ─── MOBILE NAV TOGGLE ─── */
     .nav-toggle {
@@ -562,6 +653,8 @@
 
       .artists-grid, .releases-grid { grid-template-columns: repeat(3, 1fr); }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .podcast-grid { grid-template-columns: 1fr; }
+      .contact-grid { gap: 40px; }
       .footer-top { grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
       .footer-brand { grid-column: 1 / -1; }
 
@@ -621,6 +714,9 @@
 
       .newsletter { grid-template-columns: 1fr; gap: 24px; text-align: center; }
       .newsletter-form { min-width: 0; width: 100%; max-width: 520px; margin: 0 auto; }
+      .newsletter-status { margin-top: 0; text-align: center; }
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
     /* ─── RESPONSIVE: PHONE ─── */
@@ -660,6 +756,12 @@
       .artist-play { width: 28px; height: 28px; }
 
       .services-grid { grid-template-columns: 1fr; gap: 32px; }
+      .video-grid { grid-template-columns: 1fr; }
+      .podcast-card { grid-template-columns: 1fr; text-align: center; }
+      .podcast-art { max-width: 180px; width: 100%; margin: 0 auto; }
+      .contact-form { padding: 22px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form button { align-self: stretch; }
 
       .newsletter-form { flex-direction: column; gap: 10px; }
       .newsletter-form input { border-right: 1.5px solid rgba(255,255,255,0.1); border-radius: 4px; }
@@ -672,7 +774,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
+      .js .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
@@ -680,9 +783,9 @@
 
 <!-- ─── NAV ─── -->
 <nav>
-  <div class="logo">
+  <a href="#home" class="logo" aria-label="Purpose Wave Entertainment home">
     <img src="logo.png" alt="Purpose Wave Entertainment" />
-  </div>
+  </a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -691,6 +794,7 @@
     <li class="nav-dropdown">
       <a href="#artists">Artists</a>
       <div class="dropdown-menu">
+        <a href="#artists" class="dropdown-all">All Artists</a>
         <a href="https://clazzact.purposewaveent.com/" target="_blank">Clazz@ct</a>
         <a href="https://blasha.purposewaveent.com" target="_blank">Blasha</a>
         <a href="https://levayshun.purposewaveent.com" target="_blank">L.E. Vayshun</a>
@@ -700,11 +804,11 @@
         <a href="#artists">Truth Seller</a>
       </div>
     </li>
-    <li><a href="#">Video</a></li>
-    <li><a href="#">Podcasts</a></li>
-    <li><a href="#">AI Music Lab</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#podcasts">Podcasts</a></li>
+    <li><a href="#ai-lab">AI Music Lab</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -715,8 +819,8 @@
     <h1>Positive Sound.<br><span class="gold">Purpose Driven.</span></h1>
     <p class="hero-sub">AI-generated music promoting positivity, growth and leadership for youth and emerging leaders.</p>
     <div class="hero-btns">
-      <button class="btn-primary">Listen Live</button>
-      <button class="btn-outline">Explore Music</button>
+      <a href="#listen" class="btn-primary" data-action="listen">Listen Live</a>
+      <a href="#releases" class="btn-outline">Explore Music</a>
     </div>
     <div class="hero-pills">
       <div class="pill"><span class="pill-dot"></span>AI Powered</div>
@@ -751,16 +855,17 @@
 </section>
 
 <!-- ─── PLAYER BAR ─── -->
-<div style="background:var(--black);padding:20px 0;">
+<div id="listen" style="background:var(--black);padding:20px 0;">
   <div class="player-bar reveal">
     <div class="player-station">
       <div class="live-label">Live Now</div>
+      <audio id="radioAudio" preload="none"></audio>
       <h4>Purpose Wave Radio</h4>
       <p>Positive Frequencies 24/7</p>
     </div>
 
     <div class="player-center">
-      <div class="waveform">
+      <div class="waveform paused" id="waveform" aria-hidden="true">
         <span style="height:8px;animation-delay:0s"></span>
         <span style="height:20px;animation-delay:0.07s"></span>
         <span style="height:14px;animation-delay:0.14s"></span>
@@ -783,9 +888,9 @@
         <span style="height:14px;animation-delay:1.33s"></span>
       </div>
       <div class="player-controls">
-        <button class="ctrl-btn">&#9664;&#9664;</button>
-        <button class="ctrl-btn play" id="playBtn" onclick="togglePlay()">&#9646;&#9646;</button>
-        <button class="ctrl-btn">&#9654;&#9654;</button>
+        <button class="ctrl-btn" aria-label="Previous track">&#9664;&#9664;</button>
+        <button class="ctrl-btn play" id="playBtn" aria-label="Play" onclick="togglePlay()">&#9654;</button>
+        <button class="ctrl-btn" aria-label="Next track">&#9654;&#9654;</button>
       </div>
     </div>
 
@@ -802,7 +907,7 @@
       <div style="width:80px;height:4px;background:var(--dark3);border-radius:2px;">
         <div style="width:65%;height:100%;background:var(--gold);border-radius:2px;"></div>
       </div>
-      <button class="btn-playlist">View Playlist</button>
+      <a href="#releases" class="btn-playlist">View Playlist</a>
     </div>
   </div>
 </div>
@@ -811,7 +916,7 @@
 <section id="artists" style="background:var(--black)">
   <div class="section-header reveal">
     <h2>Featured Artists</h2>
-    <a href="#" class="view-all">View All Artists &rarr;</a>
+    
   </div>
   <div class="artists-grid reveal">
 
@@ -873,72 +978,11 @@
   </div>
 </section>
 
-<!-- ─── MISSION ─── -->
-<section class="mission" id="about">
-  <div class="mission-text reveal">
-    <div class="mission-tag">Our Mission</div>
-    <h2>Music Can Entertain.<br>Purpose Can <span class="gold">Transform.</span></h2>
-    <p>Purpose Wave Entertainment combines the power of AI and human creativity to produce music that uplifts, educates and empowers the next generation of leaders.</p>
-    <button class="btn-primary" style="width:fit-content;">Learn More About Us</button>
-  </div>
-  <div class="mission-image">
-    <div style="width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,#0d0d0d,#1a1200);display:flex;align-items:center;justify-content:center;">
-      <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="opacity:0.15">
-        <circle cx="150" cy="150" r="120" fill="none" stroke="#D4A017" stroke-width="1"/>
-        <circle cx="150" cy="150" r="80" fill="none" stroke="#D4A017" stroke-width="0.5"/>
-        <text x="150" y="170" text-anchor="middle" fill="#D4A017" font-size="60" font-weight="900" font-family="sans-serif">PW</text>
-      </svg>
-    </div>
-    <div class="mission-image-overlay"></div>
-    <div class="wave-decor"></div>
-  </div>
-</section>
-
-<!-- ─── WHAT WE DO ─── -->
-<section class="what-we-do">
-  <h2 class="reveal">What We Do</h2>
-  <div class="services-grid">
-
-    <div class="service reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-      </div>
-      <h4>Music Production</h4>
-      <p>AI-assisted composition blending purpose with sound.</p>
-    </div>
-
-    <div class="service reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-      </div>
-      <h4>Youth Impact</h4>
-      <p>Creating content that inspires growth, leadership and positive change.</p>
-    </div>
-
-    <div class="service reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <h4>Community Building</h4>
-      <p>Programs, events and content that empower youth and strengthen communities.</p>
-    </div>
-
-    <div class="service reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h.01"/><path d="M12 8h5"/><path d="M7 12h.01"/><path d="M12 12h5"/></svg>
-      </div>
-      <h4>AI Music Lab</h4>
-      <p>Exploring the future of music through ethical and innovative AI technology.</p>
-    </div>
-
-  </div>
-</section>
-
 <!-- ─── LATEST RELEASES ─── -->
 <section class="latest" id="releases">
   <div class="section-header reveal">
     <h2>Latest Releases</h2>
-    <a href="#" class="view-all">View All Music &rarr;</a>
+    <a href="#listen" class="view-all">Listen Live &rarr;</a>
   </div>
   <div class="releases-grid reveal">
 
@@ -1000,58 +1044,205 @@
   </div>
 </section>
 
+<!-- ─── VIDEO ─── -->
+<section class="video-section" id="video">
+  <div class="section-header reveal">
+    <h2>Video</h2>
+    <a href="#" class="view-all" data-placeholder="youtube">Watch on YouTube &rarr;</a>
+  </div>
+  <div class="video-grid reveal">
+    <!-- To embed a real video, set data-youtube-id="VIDEO_ID" on a .video-card -->
+    <div class="video-card" data-youtube-id="">
+      <div class="video-thumb vid-bg-1"><button class="video-play" aria-label="Play music videos">&#9654;</button></div>
+      <div class="video-info"><h5>Music Videos</h5><p>Official videos and visualizers from the roster.</p></div>
+    </div>
+    <div class="video-card" data-youtube-id="">
+      <div class="video-thumb vid-bg-2"><button class="video-play" aria-label="Play behind the music">&#9654;</button></div>
+      <div class="video-info"><h5>Behind the Music</h5><p>How purpose-driven tracks come together, from idea to release.</p></div>
+    </div>
+    <div class="video-card" data-youtube-id="">
+      <div class="video-thumb vid-bg-3"><button class="video-play" aria-label="Play artist spotlights">&#9654;</button></div>
+      <div class="video-info"><h5>Artist Spotlights</h5><p>Meet the voices behind Purpose Wave and the message they carry.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PODCASTS ─── -->
+<section class="podcasts" id="podcasts">
+  <div class="section-header reveal">
+    <h2>Podcasts</h2>
+  </div>
+  <div class="podcast-grid reveal">
+    <div class="podcast-card">
+      <div class="podcast-art pod-bg-1"><span>PW</span></div>
+      <div class="podcast-body">
+        <div class="podcast-tag">Podcast</div>
+        <h3>The Purpose Wave Podcast</h3>
+        <p>Conversations on purpose, growth and leadership for youth and emerging leaders.</p>
+        <a href="#" class="btn-primary btn-sm" data-placeholder="podcast-1">Listen Now</a>
+      </div>
+    </div>
+    <div class="podcast-card">
+      <div class="podcast-art pod-bg-2"><span>TWM</span></div>
+      <div class="podcast-body">
+        <div class="podcast-tag">Podcast</div>
+        <h3>Thinking With Machines</h3>
+        <p>Exploring how people and AI create, learn and lead together.</p>
+        <a href="#" class="btn-primary btn-sm" data-placeholder="podcast-2">Listen Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT WE DO ─── -->
+<section class="what-we-do" id="what-we-do">
+  <h2 class="reveal">What We Do</h2>
+  <div class="services-grid">
+
+    <div class="service reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      </div>
+      <h4>Music Production</h4>
+      <p>AI-assisted composition blending purpose with sound.</p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      </div>
+      <h4>Youth Impact</h4>
+      <p>Creating content that inspires growth, leadership and positive change.</p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h4>Community Building</h4>
+      <p>Programs, events and content that empower youth and strengthen communities.</p>
+    </div>
+
+    <div class="service service-lab reveal" id="ai-lab">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h.01"/><path d="M12 8h5"/><path d="M7 12h.01"/><path d="M12 12h5"/></svg>
+      </div>
+      <h4>AI Music Lab</h4>
+      <p>Exploring the future of music through ethical and innovative AI technology.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── MISSION ─── -->
+<section class="mission" id="about">
+  <div class="mission-text reveal">
+    <div class="mission-tag">Our Mission</div>
+    <h2>Music Can Entertain.<br>Purpose Can <span class="gold">Transform.</span></h2>
+    <p>Purpose Wave Entertainment combines the power of AI and human creativity to produce music that uplifts, educates and empowers the next generation of leaders.</p>
+    <a href="#contact" class="btn-primary" style="width:fit-content;">Get Involved</a>
+  </div>
+  <div class="mission-image">
+    <div style="width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,#0d0d0d,#1a1200);display:flex;align-items:center;justify-content:center;">
+      <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="opacity:0.15">
+        <circle cx="150" cy="150" r="120" fill="none" stroke="#D4A017" stroke-width="1"/>
+        <circle cx="150" cy="150" r="80" fill="none" stroke="#D4A017" stroke-width="0.5"/>
+        <text x="150" y="170" text-anchor="middle" fill="#D4A017" font-size="60" font-weight="900" font-family="sans-serif">PW</text>
+      </svg>
+    </div>
+    <div class="mission-image-overlay"></div>
+    <div class="wave-decor"></div>
+  </div>
+</section>
+
 <!-- ─── NEWSLETTER ─── -->
-<div class="newsletter reveal">
+<div class="newsletter reveal" id="newsletter">
   <div class="newsletter-text">
     <h3>Stay Connected. Stay Inspired.</h3>
     <p>Join our community for new music, shows and opportunities.</p>
   </div>
-  <div class="newsletter-form">
-    <input type="email" placeholder="Enter your email" />
-    <button>Subscribe</button>
-  </div>
+  <form class="newsletter-form" id="newsletterForm" novalidate>
+    <label for="newsletterEmail" class="sr-only">Email address</label>
+    <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" required />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="form-status newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></p>
 </div>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-text reveal">
+      <div class="mission-tag">Contact</div>
+      <h2>Let's Build Something <span class="gold">With Purpose.</span></h2>
+      <p>Bookings, partnerships, youth programs, press or general questions &mdash; send us a note and the team will get back to you.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="#" id="contactEmailLink">info@purposewaveent.com</a></li>
+        <li><span>Social</span>Find us on FB, IG, YT, TikTok and X</li>
+      </ul>
+    </div>
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+      </div>
+      <label>Reason
+        <select name="reason">
+          <option>Booking</option>
+          <option>Partnership</option>
+          <option>Youth Programs</option>
+          <option>Press</option>
+          <option selected>General</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn-primary">Send Message</button>
+      <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="logo">
+      <a href="#home" class="logo">
         <img src="logo.png" alt="Purpose Wave Entertainment" />
-      </div>
+      </a>
       <p>Creating positive sound with purpose. Inspiring youth. Building leaders.</p>
     </div>
 
     <div class="footer-col">
       <h5>Quick Links</h5>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Artists</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Podcasts</a></li>
-        <li><a href="#">AI Music Lab</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#releases">Music</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#podcasts">Podcasts</a></li>
+        <li><a href="#ai-lab">AI Music Lab</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h5>Resources</h5>
       <ul>
-        <li><a href="#">Youth Leadership</a></li>
-        <li><a href="#">Press Kit</a></li>
-        <li><a href="#">FAQs</a></li>
+        <li><a href="#what-we-do">Youth Leadership</a></li>
+        <li><a href="#contact">Press Kit</a></li>
+        <li><a href="#contact">FAQs</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h5>Connect</h5>
       <div class="social-links">
-        <a class="social-btn" href="#">FB</a>
-        <a class="social-btn" href="#">IG</a>
-        <a class="social-btn" href="#">YT</a>
-        <a class="social-btn" href="#">TK</a>
-        <a class="social-btn" href="#">X</a>
+        <a class="social-btn" href="#" data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+        <a class="social-btn" href="#" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+        <a class="social-btn" href="#" data-social="youtube" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+        <a class="social-btn" href="#" data-social="tiktok" aria-label="TikTok" target="_blank" rel="noopener">TK</a>
+        <a class="social-btn" href="#" data-social="x" aria-label="X" target="_blank" rel="noopener">X</a>
       </div>
       <p style="font-size:11px;color:var(--gray);margin-top:16px;">Download Our App</p>
       <div class="app-btns">
@@ -1063,12 +1254,12 @@
     <div class="on-air">
       <div class="label">On Air 24/7</div>
       <p>Positive music.<br>Positive messages.<br>Positive impact.</p>
-      <button class="btn-listen-live">Listen Live Now</button>
+      <a href="#listen" class="btn-listen-live" data-action="listen">Listen Live Now</a>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2024 Purpose Wave Entertainment. All Rights Reserved.</p>
+    <p>&copy; <span id="year">2026</span> Purpose Wave Entertainment. All Rights Reserved.</p>
     <div class="footer-legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Use</a>
@@ -1077,33 +1268,127 @@
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+  /* ════════════════════════════════════════════════════════════
+     SITE SETTINGS — fill these in; everything else updates itself.
+     Empty values are treated as "coming soon" and won't break the page.
+     ════════════════════════════════════════════════════════════ */
+  const SITE = {
+    radioStreamUrl: '',            // e.g. 'https://stream.example.com/purposewave.mp3'
+    contactEmail: 'info@purposewaveent.com', // CONFIRM this address
+    contactFormEndpoint: '',       // e.g. Formspree/Netlify/Google Apps Script URL (POST)
+    newsletterEndpoint: '',        // e.g. Mailchimp/ConvertKit/Formspree URL (POST)
+    youtube: '',                   // channel URL
+    podcasts: { 'podcast-1': '', 'podcast-2': '' }, // Purpose Wave Podcast, Thinking With Machines
+    social: { facebook: '', instagram: '', youtube: '', tiktok: '', x: '' },
+    apps: { appstore: '', googleplay: '' },        // leave empty to hide the app buttons
+    privacyUrl: '',
+    termsUrl: ''
+  };
 
-  // Play/pause toggle
-  let playing = true;
-  function togglePlay() {
-    playing = !playing;
-    document.getElementById('playBtn').innerHTML = playing ? '&#9646;&#9646;' : '&#9654;';
+  // ─── Apply settings to links ───
+  function setLink(el, url) {
+    if (!el) return;
+    if (url) {
+      el.href = url;
+      if (/^https?:/.test(url)) { el.target = '_blank'; el.rel = 'noopener'; }
+      el.classList.remove('is-placeholder');
+    } else {
+      el.classList.add('is-placeholder');
+      el.title = 'Coming soon';
+      el.addEventListener('click', e => e.preventDefault());
+    }
+  }
+  document.querySelectorAll('[data-social]').forEach(a => setLink(a, SITE.social[a.dataset.social] || ''));
+  setLink(document.querySelector('[data-placeholder="youtube"]'), SITE.youtube || SITE.social.youtube);
+  document.querySelectorAll('[data-placeholder^="podcast"]').forEach(a => setLink(a, SITE.podcasts[a.dataset.placeholder]));
+  const appBtns = document.querySelectorAll('.app-btn');
+  if (appBtns.length) {
+    setLink(appBtns[0], SITE.apps.appstore); setLink(appBtns[1], SITE.apps.googleplay);
+    if (!SITE.apps.appstore && !SITE.apps.googleplay) {
+      const wrap = appBtns[0].parentElement; wrap.style.display = 'none';
+      if (wrap.previousElementSibling) wrap.previousElementSibling.style.display = 'none';
+    }
+  }
+  const legal = document.querySelectorAll('.footer-legal a');
+  setLink(legal[0], SITE.privacyUrl); setLink(legal[1], SITE.termsUrl);
+  const emailLink = document.getElementById('contactEmailLink');
+  if (emailLink) { emailLink.href = 'mailto:' + SITE.contactEmail; emailLink.textContent = SITE.contactEmail; }
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ─── Scroll reveal ───
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('revealed'));
   }
 
-  // Fake time progress
+  // ─── Radio player ───
+  const audio = document.getElementById('radioAudio');
+  const playBtn = document.getElementById('playBtn');
+  const waveform = document.getElementById('waveform');
+  let playing = false;
+
+  function setPlayingUI(on) {
+    playing = on;
+    playBtn.innerHTML = on ? '&#9646;&#9646;' : '&#9654;';
+    playBtn.setAttribute('aria-label', on ? 'Pause' : 'Play');
+    waveform.classList.toggle('paused', !on);
+  }
+  function togglePlay() {
+    if (SITE.radioStreamUrl) {
+      if (!audio.src) audio.src = SITE.radioStreamUrl;
+      if (audio.paused) {
+        audio.play().then(() => setPlayingUI(true)).catch(() => setPlayingUI(false));
+      } else { audio.pause(); setPlayingUI(false); }
+    } else {
+      setPlayingUI(!playing); // demo mode until a stream URL is set
+    }
+  }
+  if (audio) {
+    audio.addEventListener('pause', () => setPlayingUI(false));
+    audio.addEventListener('playing', () => setPlayingUI(true));
+  }
+
+  // Demo time progress (only when no real stream is configured)
   let secs = 165;
   setInterval(() => {
-    if (!playing) return;
+    if (!playing || SITE.radioStreamUrl) return;
     secs = (secs + 1) % 252;
     const m = Math.floor(secs / 60), s = secs % 60;
     document.getElementById('trackTime').textContent =
       `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} / 04:12`;
   }, 1000);
 
-  // Mobile menu
+  // "Listen Live" buttons scroll to the player and start it
+  document.querySelectorAll('[data-action="listen"]').forEach(btn => {
+    btn.addEventListener('click', () => { if (!playing) togglePlay(); });
+  });
+
+  // ─── Video cards: embed YouTube when an ID is set ───
+  document.querySelectorAll('.video-card').forEach(card => {
+    const btn = card.querySelector('.video-play');
+    btn.addEventListener('click', () => {
+      const id = card.dataset.youtubeId;
+      if (id) {
+        card.querySelector('.video-thumb').innerHTML =
+          `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1" title="${card.querySelector('h5').textContent}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      } else if (SITE.youtube || SITE.social.youtube) {
+        window.open(SITE.youtube || SITE.social.youtube, '_blank', 'noopener');
+      } else {
+        btn.title = 'Videos coming soon';
+        btn.textContent = 'Soon';
+        btn.style.fontSize = '11px';
+      }
+    });
+  });
+
+  // ─── Mobile menu ───
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   const mobileQuery = window.matchMedia('(max-width: 960px)');
@@ -1134,23 +1419,104 @@
     });
   });
 
-  // Reset menu when resizing back to desktop
   mobileQuery.addEventListener('change', e => { if (!e.matches) closeMenu(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-  // Nav smooth scroll (skips bare "#" placeholder links)
+  // ─── In-page links: smooth scroll (offset handled by CSS scroll-margin) ───
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
       if (id.length > 1) {
         const target = document.querySelector(id);
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        if (target) {
+          e.preventDefault();
+          if (id === '#home') window.scrollTo({ top: 0, behavior: 'smooth' });
+          else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', id);
+          if (id === '#ai-lab') {
+            target.classList.remove('flash'); void target.offsetWidth; target.classList.add('flash');
+          }
+        }
       }
-      if (navLinks.contains(a)) closeMenu();
+      if (navLinks.contains(a) || a.classList.contains('logo')) closeMenu();
     });
   });
-
-  // Close mobile menu when an external artist link is chosen
   navLinks.querySelectorAll('a[target="_blank"]').forEach(a => a.addEventListener('click', closeMenu));
+
+  // ─── Highlight the menu item for the section in view ───
+  const navItems = [...document.querySelectorAll('.nav-links > li > a[href^="#"]')]
+    .map(a => {
+      const t = document.querySelector(a.getAttribute('href'));
+      return t ? { a, section: t.closest('section') || t } : null;
+    }).filter(Boolean);
+
+  function updateActive() {
+    const line = window.scrollY + 90;
+    let current = navItems[0];
+    navItems.forEach(item => {
+      if (item.section.getBoundingClientRect().top + window.scrollY <= line) current = item;
+    });
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = navItems[navItems.length - 1];
+    navItems.forEach(item => item.a.classList.toggle('active', item === current));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // ─── Forms ───
+  const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  function postForm(endpoint, data) {
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    }).then(r => { if (!r.ok) throw new Error('Request failed'); });
+  }
+
+  const nlForm = document.getElementById('newsletterForm');
+  const nlStatus = document.getElementById('newsletterStatus');
+  nlForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const input = nlForm.querySelector('input');
+    nlStatus.className = 'form-status newsletter-status';
+    if (!isEmail(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'true');
+      nlStatus.textContent = 'Please enter a valid email address.'; nlStatus.classList.add('err'); return;
+    }
+    input.removeAttribute('aria-invalid');
+    const done = () => { nlStatus.textContent = 'You\'re in! Welcome to the Purpose Wave community.'; nlStatus.classList.add('ok'); nlForm.reset(); };
+    if (SITE.newsletterEndpoint) {
+      postForm(SITE.newsletterEndpoint, new FormData(nlForm)).then(done)
+        .catch(() => { nlStatus.textContent = 'Something went wrong. Please try again.'; nlStatus.classList.add('err'); });
+    } else {
+      window.location.href = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent('Newsletter signup')}&body=${encodeURIComponent('Please add me: ' + input.value.trim())}`;
+      done();
+    }
+  });
+
+  const cForm = document.getElementById('contactForm');
+  const cStatus = document.getElementById('contactStatus');
+  cForm.addEventListener('submit', e => {
+    e.preventDefault();
+    cStatus.className = 'form-status';
+    let ok = true;
+    cForm.querySelectorAll('[required]').forEach(f => {
+      const bad = !f.value.trim() || (f.type === 'email' && !isEmail(f.value.trim()));
+      f.toggleAttribute('aria-invalid', bad); if (bad) f.setAttribute('aria-invalid', 'true');
+      if (bad) ok = false;
+    });
+    if (!ok) { cStatus.textContent = 'Please fill in your name, a valid email and a message.'; cStatus.classList.add('err'); return; }
+    const fd = new FormData(cForm);
+    const done = () => { cStatus.textContent = 'Thanks! Your message is on its way. We\'ll be in touch soon.'; cStatus.classList.add('ok'); cForm.reset(); };
+    if (SITE.contactFormEndpoint) {
+      postForm(SITE.contactFormEndpoint, fd).then(done)
+        .catch(() => { cStatus.textContent = 'Something went wrong. Please email us directly.'; cStatus.classList.add('err'); });
+    } else {
+      const body = `Name: ${fd.get('name')}\nEmail: ${fd.get('email')}\nReason: ${fd.get('reason')}\n\n${fd.get('message')}`;
+      window.location.href = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent('Website inquiry: ' + fd.get('reason'))}&body=${encodeURIComponent(body)}`;
+      cStatus.textContent = 'Opening your email app to send the message…'; cStatus.classList.add('ok');
+    }
+  });
 </script>
 </body>
 </html>
