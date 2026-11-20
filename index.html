@@ -533,6 +533,147 @@
     /* Scroll reveal */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .revealed { opacity: 1; transform: none; }
+
+    /* ─── MOBILE NAV TOGGLE ─── */
+    .nav-toggle {
+      display: none;
+      width: 44px; height: 44px;
+      background: transparent; border: none; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px; background: var(--white);
+      transition: transform .25s, opacity .25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    img { max-width: 100%; }
+
+    /* ─── RESPONSIVE: LARGE TABLET / SMALL LAPTOP ─── */
+    @media (max-width: 1200px) {
+      section { padding: 70px 40px; }
+      .hero { padding-left: 40px; }
+      .mission { padding: 0; }
+      .mission-text { padding: 60px 40px; }
+      .newsletter { padding: 50px 40px; }
+      footer { padding: 50px 40px 30px; }
+
+      .artists-grid, .releases-grid { grid-template-columns: repeat(3, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: 1 / -1; }
+
+      .player-bar { grid-template-columns: 1fr auto; row-gap: 20px; }
+      .player-center { grid-column: 1 / -1; order: 3; }
+    }
+
+    /* ─── RESPONSIVE: TABLET (nav collapses) ─── */
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: fixed; top: 70px; left: 0; right: 0;
+        max-height: calc(100vh - 70px); overflow-y: auto;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: rgba(10,10,10,0.98);
+        border-bottom: 1px solid rgba(212,160,23,0.2);
+        padding: 8px 0 16px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        height: auto; padding: 14px 24px; font-size: 15px;
+        justify-content: space-between;
+      }
+      .nav-links a.active { border-bottom: none; border-left: 3px solid var(--gold); color: var(--gold); }
+
+      .nav-dropdown:hover .dropdown-menu { display: none; }
+      .nav-dropdown.open .dropdown-menu { display: block; }
+      .dropdown-menu {
+        position: static; border: none; border-radius: 0; box-shadow: none;
+        background: rgba(255,255,255,0.03); padding: 4px 0;
+      }
+      .dropdown-menu a { padding: 12px 40px; font-size: 14px; white-space: normal; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 110px 24px 40px;
+        text-align: center;
+        min-height: auto;
+      }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-btns, .hero-pills { justify-content: center; }
+      .hero-btns { margin-bottom: 36px; }
+      .hero-image { min-height: 340px; margin-top: 30px; }
+      .hero-image-overlay { background: linear-gradient(to bottom, var(--black) 0%, transparent 30%); }
+      .soundwave { right: 50%; transform: translateX(50%); bottom: 24px; }
+
+      .player-bar { margin: 0 20px; }
+
+      .mission { grid-template-columns: 1fr; }
+      .mission-image { min-height: 280px; }
+      .mission-image > div { min-height: 280px !important; }
+      .mission-image svg { width: 200px; height: 200px; }
+      .mission-image-overlay { background: linear-gradient(to bottom, var(--dark2) 0%, transparent 30%); }
+
+      .newsletter { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+      .newsletter-form { min-width: 0; width: 100%; max-width: 520px; margin: 0 auto; }
+    }
+
+    /* ─── RESPONSIVE: PHONE ─── */
+    @media (max-width: 600px) {
+      section { padding: 56px 20px; }
+      .mission { padding: 0; }
+      .mission-text { padding: 48px 20px; }
+      .newsletter { padding: 44px 20px; }
+      footer { padding: 44px 20px 24px; }
+
+      .logo img { height: 42px; }
+
+      .hero { padding: 100px 20px 32px; }
+      .hero-badge { font-size: 10px; }
+      .hero-sub { font-size: 15px; }
+      .hero-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+      .hero-pills { gap: 14px 20px; }
+      .pill { font-size: 11px; }
+      .hero-image { min-height: 260px; }
+
+      .player-bar {
+        grid-template-columns: 1fr;
+        margin: 0 16px; padding: 18px;
+        text-align: center;
+      }
+      .player-station .live-label { justify-content: center; }
+      .player-track { justify-content: center; text-align: left; }
+      .player-bar > div:last-child { justify-content: center; }
+
+      .section-header { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 28px; }
+      .section-header h2, .what-we-do h2 { font-size: 19px; }
+      .what-we-do h2 { margin-bottom: 32px; }
+
+      .artists-grid, .releases-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .artist-overlay { padding: 12px; }
+      .artist-name { font-size: 12px; }
+      .artist-play { width: 28px; height: 28px; }
+
+      .services-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .newsletter-form { flex-direction: column; gap: 10px; }
+      .newsletter-form input { border-right: 1.5px solid rgba(255,255,255,0.1); border-radius: 4px; }
+      .newsletter-form button { border-radius: 4px; }
+
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .on-air { min-width: 0; }
+      .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -542,7 +683,10 @@
   <div class="logo">
     <img src="logo.png" alt="Purpose Wave Entertainment" />
   </div>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#home" class="active">Home</a></li>
     <li class="nav-dropdown">
       <a href="#artists">Artists</a>
@@ -553,6 +697,7 @@
         <a href="#artists">Struktured Fact</a>
         <a href="#artists">K. Wisdom</a>
         <a href="#artists">Doc T</a>
+        <a href="#artists">Truth Seller</a>
       </div>
     </li>
     <li><a href="#">Video</a></li>
@@ -958,14 +1103,54 @@
       `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} / 04:12`;
   }, 1000);
 
-  // Nav smooth scroll
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const mobileQuery = window.matchMedia('(max-width: 960px)');
+
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+  }
+
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+
+  // On mobile, tapping "Artists" opens its submenu instead of navigating
+  document.querySelectorAll('.nav-dropdown > a').forEach(a => {
+    a.addEventListener('click', e => {
+      if (mobileQuery.matches) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        a.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  // Reset menu when resizing back to desktop
+  mobileQuery.addEventListener('change', e => { if (!e.matches) closeMenu(); });
+
+  // Nav smooth scroll (skips bare "#" placeholder links)
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
-      const target = document.querySelector(id);
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      if (id.length > 1) {
+        const target = document.querySelector(id);
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      }
+      if (navLinks.contains(a)) closeMenu();
     });
   });
+
+  // Close mobile menu when an external artist link is chosen
+  navLinks.querySelectorAll('a[target="_blank"]').forEach(a => a.addEventListener('click', closeMenu));
 </script>
 </body>
 </html>
