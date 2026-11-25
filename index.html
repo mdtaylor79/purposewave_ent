@@ -481,7 +481,7 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
     .footer-top {
-      display: grid; grid-template-columns: 220px 1fr 1fr 1fr auto;
+      display: grid; grid-template-columns: 220px 1fr 1fr 1fr;
       gap: 60px; margin-bottom: 50px;
     }
     .footer-brand p {
@@ -554,7 +554,7 @@
 
     /* ─── IN-PAGE NAVIGATION ─── */
     html { scroll-behavior: smooth; }
-    section[id], [id="listen"], [id="newsletter"] { scroll-margin-top: 70px; }
+    section[id], [id="newsletter"] { scroll-margin-top: 70px; }
     #ai-lab { scroll-margin-top: 100px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     a.btn-primary, a.btn-outline, a.btn-playlist, a.btn-listen-live { display: inline-block; text-align: center; }
@@ -587,7 +587,7 @@
 
     /* ─── PODCASTS ─── */
     .podcasts { background: var(--dark2); }
-    .podcast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .podcast-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 760px; }
     .podcast-card {
       display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: center;
       background: var(--dark3); border-radius: 8px; padding: 20px;
@@ -825,8 +825,8 @@
     <h1>Positive Sound.<br><span class="gold">Purpose Driven.</span></h1>
     <p class="hero-sub">AI-generated music promoting positivity, growth and leadership for youth and emerging leaders.</p>
     <div class="hero-btns">
-      <a href="#listen" class="btn-primary" data-action="listen">Listen Live</a>
-      <a href="#releases" class="btn-outline">Explore Music</a>
+      <a href="#artists" class="btn-primary">Meet the Artists</a>
+      <a href="#video" class="btn-outline">Watch Video</a>
     </div>
     <div class="hero-pills">
       <div class="pill"><span class="pill-dot"></span>AI Powered</div>
@@ -840,64 +840,6 @@
     <div class="hero-image-overlay"></div>
   </div>
 </section>
-
-<!-- ─── PLAYER BAR ─── -->
-<div id="listen" style="background:var(--black);padding:20px 0;">
-  <div class="player-bar reveal">
-    <div class="player-station">
-      <div class="live-label">Live Now</div>
-      <audio id="radioAudio" preload="none"></audio>
-      <h4>Purpose Wave Radio</h4>
-      <p>Positive Frequencies 24/7</p>
-    </div>
-
-    <div class="player-center">
-      <div class="waveform paused" id="waveform" aria-hidden="true">
-        <span style="height:8px;animation-delay:0s"></span>
-        <span style="height:20px;animation-delay:0.07s"></span>
-        <span style="height:14px;animation-delay:0.14s"></span>
-        <span style="height:28px;animation-delay:0.21s"></span>
-        <span style="height:10px;animation-delay:0.28s"></span>
-        <span style="height:32px;animation-delay:0.35s"></span>
-        <span style="height:18px;animation-delay:0.42s"></span>
-        <span style="height:26px;animation-delay:0.49s"></span>
-        <span style="height:12px;animation-delay:0.56s"></span>
-        <span style="height:22px;animation-delay:0.63s"></span>
-        <span style="height:30px;animation-delay:0.7s"></span>
-        <span style="height:16px;animation-delay:0.77s"></span>
-        <span style="height:24px;animation-delay:0.84s"></span>
-        <span style="height:8px;animation-delay:0.91s"></span>
-        <span style="height:18px;animation-delay:0.98s"></span>
-        <span style="height:34px;animation-delay:1.05s"></span>
-        <span style="height:12px;animation-delay:1.12s"></span>
-        <span style="height:20px;animation-delay:1.19s"></span>
-        <span style="height:28px;animation-delay:1.26s"></span>
-        <span style="height:14px;animation-delay:1.33s"></span>
-      </div>
-      <div class="player-controls">
-        <button class="ctrl-btn" aria-label="Previous track">&#9664;&#9664;</button>
-        <button class="ctrl-btn play" id="playBtn" aria-label="Play" onclick="togglePlay()">&#9654;</button>
-        <button class="ctrl-btn" aria-label="Next track">&#9654;&#9654;</button>
-      </div>
-    </div>
-
-    <div class="player-track">
-      <div class="track-thumb"></div>
-      <div class="track-info">
-        <h5>Stronger Together</h5>
-        <div class="meta">AI Generated · Leadership Anthem</div>
-        <div class="time" id="trackTime">02:45 / 04:12</div>
-      </div>
-    </div>
-
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="width:80px;height:4px;background:var(--dark3);border-radius:2px;">
-        <div style="width:65%;height:100%;background:var(--gold);border-radius:2px;"></div>
-      </div>
-      <a href="#releases" class="btn-playlist">View Playlist</a>
-    </div>
-  </div>
-</div>
 
 <!-- ─── FEATURED ARTISTS ─── -->
 <section id="artists" style="background:var(--black)">
@@ -987,72 +929,6 @@
   </div>
 </section>
 
-<!-- ─── LATEST RELEASES ─── -->
-<section class="latest" id="releases">
-  <div class="section-header reveal">
-    <h2>Latest Releases</h2>
-    <a href="#listen" class="view-all">Listen Live &rarr;</a>
-  </div>
-  <div class="releases-grid reveal">
-
-    <div class="release-card">
-      <div class="release-thumb">
-        <div class="release-img rel-bg-1" style="width:100%;height:100%;"></div>
-        <div class="release-play-btn"><span>&#9654;</span></div>
-      </div>
-      <div class="release-info">
-        <h5>Seasons Don't Apologize</h5>
-        <p>L.E. Vayshun</p>
-      </div>
-    </div>
-
-    <div class="release-card">
-      <div class="release-thumb">
-        <div class="release-img rel-bg-2" style="width:100%;height:100%;"></div>
-        <div class="release-play-btn"><span>&#9654;</span></div>
-      </div>
-      <div class="release-info">
-        <h5>City Rain</h5>
-        <p>Struktured Facts</p>
-      </div>
-    </div>
-
-    <div class="release-card">
-      <div class="release-thumb">
-        <div class="release-img rel-bg-3" style="width:100%;height:100%;"></div>
-        <div class="release-play-btn"><span>&#9654;</span></div>
-      </div>
-      <div class="release-info">
-        <h5>Loyalty</h5>
-        <p>L.E. Vayshun</p>
-      </div>
-    </div>
-
-    <div class="release-card">
-      <div class="release-thumb">
-        <div class="release-img rel-bg-4" style="width:100%;height:100%;"></div>
-        <div class="release-play-btn"><span>&#9654;</span></div>
-      </div>
-      <div class="release-info">
-        <h5>Stronger Together</h5>
-        <p>Blasha</p>
-      </div>
-    </div>
-
-    <div class="release-card">
-      <div class="release-thumb">
-        <div class="release-img rel-bg-5" style="width:100%;height:100%;"></div>
-        <div class="release-play-btn"><span>&#9654;</span></div>
-      </div>
-      <div class="release-info">
-        <h5>Purpose Over Popularity</h5>
-        <p>Clazz@ct</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- ─── VIDEO ─── -->
 <section class="video-section" id="video">
   <div class="section-header reveal">
@@ -1061,9 +937,9 @@
   </div>
   <div class="video-grid reveal">
     <!-- To embed a real video, set data-youtube-id="VIDEO_ID" on a .video-card -->
-    <div class="video-card" data-youtube-id="">
-      <div class="video-thumb vid-bg-1"><button class="video-play" aria-label="Play music videos">&#9654;</button></div>
-      <div class="video-info"><h5>Music Videos</h5><p>Official videos and visualizers from the roster.</p></div>
+    <div class="video-card" data-youtube-id="kKhxhKinDxo">
+      <div class="video-thumb" style="background:#000 url('https://i.ytimg.com/vi/kKhxhKinDxo/hqdefault.jpg') center / cover no-repeat;"><button class="video-play" aria-label="Play Am I Trippin music video">&#9654;</button></div>
+      <div class="video-info"><h5>Am I Trippin (Official Music Video)</h5><p>Clazz@ct ft. Blasha</p></div>
     </div>
     <div class="video-card" data-youtube-id="">
       <div class="video-thumb vid-bg-2"><button class="video-play" aria-label="Play behind the music">&#9654;</button></div>
@@ -1089,15 +965,6 @@
         <h3>The Purpose Wave Podcast</h3>
         <p>Conversations on purpose, growth and leadership for youth and emerging leaders.</p>
         <a href="#" class="btn-primary btn-sm" data-placeholder="podcast-1">Listen Now</a>
-      </div>
-    </div>
-    <div class="podcast-card">
-      <div class="podcast-art pod-bg-2"><span>TWM</span></div>
-      <div class="podcast-body">
-        <div class="podcast-tag">Podcast</div>
-        <h3>Thinking With Machines</h3>
-        <p>Exploring how people and AI create, learn and lead together.</p>
-        <a href="#" class="btn-primary btn-sm" data-placeholder="podcast-2">Listen Now</a>
       </div>
     </div>
   </div>
@@ -1226,7 +1093,6 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#artists">Artists</a></li>
-        <li><a href="#releases">Music</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#podcasts">Podcasts</a></li>
         <li><a href="#ai-lab">AI Music Lab</a></li>
@@ -1260,11 +1126,6 @@
       </div>
     </div>
 
-    <div class="on-air">
-      <div class="label">On Air 24/7</div>
-      <p>Positive music.<br>Positive messages.<br>Positive impact.</p>
-      <a href="#listen" class="btn-listen-live" data-action="listen">Listen Live Now</a>
-    </div>
   </div>
 
   <div class="footer-bottom">
@@ -1282,12 +1143,11 @@
      Empty values are treated as "coming soon" and won't break the page.
      ════════════════════════════════════════════════════════════ */
   const SITE = {
-    radioStreamUrl: '',            // e.g. 'https://stream.example.com/purposewave.mp3'
     contactEmail: 'info@purposewaveent.com', // CONFIRM this address
     contactFormEndpoint: '',       // e.g. Formspree/Netlify/Google Apps Script URL (POST)
     newsletterEndpoint: '',        // e.g. Mailchimp/ConvertKit/Formspree URL (POST)
-    youtube: '',                   // channel URL
-    podcasts: { 'podcast-1': '', 'podcast-2': '' }, // Purpose Wave Podcast, Thinking With Machines
+    youtube: 'https://youtu.be/kKhxhKinDxo', // channel URL (swap for your channel when ready)
+    podcasts: { 'podcast-1': '' }, // The Purpose Wave Podcast
     social: { facebook: '', instagram: '', youtube: '', tiktok: '', x: '' },
     apps: { appstore: '', googleplay: '' },        // leave empty to hide the app buttons
     privacyUrl: '',
@@ -1336,48 +1196,6 @@
   } else {
     reveals.forEach(el => el.classList.add('revealed'));
   }
-
-  // ─── Radio player ───
-  const audio = document.getElementById('radioAudio');
-  const playBtn = document.getElementById('playBtn');
-  const waveform = document.getElementById('waveform');
-  let playing = false;
-
-  function setPlayingUI(on) {
-    playing = on;
-    playBtn.innerHTML = on ? '&#9646;&#9646;' : '&#9654;';
-    playBtn.setAttribute('aria-label', on ? 'Pause' : 'Play');
-    waveform.classList.toggle('paused', !on);
-  }
-  function togglePlay() {
-    if (SITE.radioStreamUrl) {
-      if (!audio.src) audio.src = SITE.radioStreamUrl;
-      if (audio.paused) {
-        audio.play().then(() => setPlayingUI(true)).catch(() => setPlayingUI(false));
-      } else { audio.pause(); setPlayingUI(false); }
-    } else {
-      setPlayingUI(!playing); // demo mode until a stream URL is set
-    }
-  }
-  if (audio) {
-    audio.addEventListener('pause', () => setPlayingUI(false));
-    audio.addEventListener('playing', () => setPlayingUI(true));
-  }
-
-  // Demo time progress (only when no real stream is configured)
-  let secs = 165;
-  setInterval(() => {
-    if (!playing || SITE.radioStreamUrl) return;
-    secs = (secs + 1) % 252;
-    const m = Math.floor(secs / 60), s = secs % 60;
-    document.getElementById('trackTime').textContent =
-      `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} / 04:12`;
-  }, 1000);
-
-  // "Listen Live" buttons scroll to the player and start it
-  document.querySelectorAll('[data-action="listen"]').forEach(btn => {
-    btn.addEventListener('click', () => { if (!playing) togglePlay(); });
-  });
 
   // ─── Video cards: embed YouTube when an ID is set ───
   document.querySelectorAll('.video-card').forEach(card => {
