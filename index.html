@@ -308,9 +308,10 @@
 
     /* ─── FEATURED ARTISTS ─── */
     .artists-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
     }
     .artist-card {
+      display: block;
       position: relative; border-radius: 4px; overflow: hidden;
       aspect-ratio: 3/4; cursor: pointer; background: var(--dark3);
     }
@@ -795,13 +796,13 @@
       <a href="#artists">Artists</a>
       <div class="dropdown-menu">
         <a href="#artists" class="dropdown-all">All Artists</a>
-        <a href="https://clazzact.purposewaveent.com/" target="_blank">Clazz@ct</a>
-        <a href="https://blasha.purposewaveent.com" target="_blank">Blasha</a>
-        <a href="https://levayshun.purposewaveent.com" target="_blank">L.E. Vayshun</a>
-        <a href="#artists">Struktured Fact</a>
-        <a href="#artists">K. Wisdom</a>
-        <a href="#artists">Doc T</a>
+        <a href="https://blasha.purposewaveent.com/" target="_blank" rel="noopener">Blasha</a>
+        <a href="https://clazzact.purposewaveent.com/" target="_blank" rel="noopener">Clazz@ct</a>
+        <a href="https://kwisdom.purposewaveent.com/" target="_blank" rel="noopener">K. Wisdom</a>
+        <a href="https://levayshun.purposewaveent.com/" target="_blank" rel="noopener">L.E. Vayshun</a>
+        <a href="https://strukturedfacts.purposewaveent.com/" target="_blank" rel="noopener">Struktured Facts</a>
         <a href="https://truthseller.purposewaveent.com/" target="_blank" rel="noopener">Truth Seller</a>
+        <a href="#artists">Doc T</a>
       </div>
     </li>
     <li><a href="#video">Video</a></li>
@@ -920,19 +921,19 @@
   </div>
   <div class="artists-grid reveal">
 
-    <div class="artist-card">
-      <div class="card-bg" style="background:linear-gradient(160deg,#2a1500,#0d0d0d);width:100%;height:100%;"></div>
+    <a class="artist-card" href="https://strukturedfacts.purposewaveent.com/" target="_blank" rel="noopener" aria-label="Visit the Struktured Facts site">
+      <div class="card-bg" style="background:#0d0d0d url('images/strukturedfacts.jpg') 15% center / cover no-repeat;width:100%;height:100%;" role="img" aria-label="Struktured Facts — TIERS cover art"></div>
       <div class="artist-overlay">
         <div>
-          <div class="artist-name">Struktured Fact</div>
+          <div class="artist-name">Struktured Facts</div>
           <div class="artist-genre">Hip-Hop · Conscious</div>
         </div>
         <div class="artist-play">&#9654;</div>
       </div>
-    </div>
+    </a>
 
-    <div class="artist-card">
-      <div class="card-bg" style="background:linear-gradient(160deg,#0a1530,#0d0d0d);width:100%;height:100%;"></div>
+    <a class="artist-card" href="https://blasha.purposewaveent.com/" target="_blank" rel="noopener" aria-label="Visit the Blasha site">
+      <div class="card-bg" style="background:#0d0d0d url('images/blasha.jpg') center / cover no-repeat;width:100%;height:100%;" role="img" aria-label="Blasha — Beautifully Unfiltered cover art"></div>
       <div class="artist-overlay">
         <div>
           <div class="artist-name">Blasha</div>
@@ -940,10 +941,10 @@
         </div>
         <div class="artist-play">&#9654;</div>
       </div>
-    </div>
+    </a>
 
-    <div class="artist-card">
-      <div class="card-bg" style="background:linear-gradient(160deg,#150a25,#0d0d0d);width:100%;height:100%;"></div>
+    <a class="artist-card" href="https://levayshun.purposewaveent.com/" target="_blank" rel="noopener" aria-label="Visit the L.E. Vayshun site">
+      <div class="card-bg" style="background:#0d0d0d url('images/levayshun.jpg') center / cover no-repeat;width:100%;height:100%;" role="img" aria-label="L.E. Vayshun — The Order of Bad Decisions cover art"></div>
       <div class="artist-overlay">
         <div>
           <div class="artist-name">L.E. Vayshun</div>
@@ -951,10 +952,10 @@
         </div>
         <div class="artist-play">&#9654;</div>
       </div>
-    </div>
+    </a>
 
-    <div class="artist-card">
-      <div class="card-bg" style="background:linear-gradient(160deg,#051a10,#0d0d0d);width:100%;height:100%;"></div>
+    <a class="artist-card" href="https://clazzact.purposewaveent.com/" target="_blank" rel="noopener" aria-label="Visit the Clazz@ct site">
+      <div class="card-bg" style="background:#0d0d0d url('images/clazzact.jpg') center / cover no-repeat;width:100%;height:100%;" role="img" aria-label="Clazz@ct — Help Me Understand cover art"></div>
       <div class="artist-overlay">
         <div>
           <div class="artist-name">Clazz@ct</div>
@@ -962,7 +963,29 @@
         </div>
         <div class="artist-play">&#9654;</div>
       </div>
-    </div>
+    </a>
+
+    <a class="artist-card" href="https://kwisdom.purposewaveent.com/" target="_blank" rel="noopener" aria-label="Visit the K. Wisdom site">
+      <div class="card-bg" style="background:#0d0d0d url('images/kwisdom.jpg') 85% center / cover no-repeat;width:100%;height:100%;" role="img" aria-label="K. Wisdom — Boundaries cover art"></div>
+      <div class="artist-overlay">
+        <div>
+          <div class="artist-name">K. Wisdom</div>
+          <div class="artist-genre">Hip-Hop · Wisdom</div>
+        </div>
+        <div class="artist-play">&#9654;</div>
+      </div>
+    </a>
+
+    <a class="artist-card" href="https://truthseller.purposewaveent.com/" target="_blank" rel="noopener" aria-label="Visit the Truth Seller site">
+      <div class="card-bg" style="background:#0d0d0d url('images/truthseller.jpg') center / cover no-repeat;width:100%;height:100%;" role="img" aria-label="Truth Seller — What If? cover art"></div>
+      <div class="artist-overlay">
+        <div>
+          <div class="artist-name">Truth Seller</div>
+          <div class="artist-genre">Hip-Hop · Truth</div>
+        </div>
+        <div class="artist-play">&#9654;</div>
+      </div>
+    </a>
 
     <div class="artist-card">
       <div class="card-bg" style="background:linear-gradient(160deg,#1a0a05,#0d0d0d);width:100%;height:100%;"></div>
@@ -1004,7 +1027,7 @@
       </div>
       <div class="release-info">
         <h5>City Rain</h5>
-        <p>Struktured Fact</p>
+        <p>Struktured Facts</p>
       </div>
     </div>
 
